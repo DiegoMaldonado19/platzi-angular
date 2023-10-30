@@ -6,7 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  name = 'Diego';
+  name = 'Diego Maldonado';
   age = 23;
   img = 'https://source.unsplash.com/random';
+  btnDisabled = true;
+  
+  person = {
+    name: 'Diego Maldonado',
+    age: 18,
+    avatar: 'https://source.unsplash.com/random'
+  }
 }

@@ -1,5 +1,19 @@
+<h1>Propiedades</h1>
+<button [disabled]="btnDisabled">Enviar</button>
+<input type="text" [value]="person.name" /> 
+<progress max="100" [value]="person.age" ></progress>
+<img  width="100" [src]="person.avatar" />
+<hr/>
 <h1>Hola Mundo</h1>
 <h2>{{'Hola Mundo'.repeat(5)}}</h2>
 <p>3 + 3 = {{ 3+3 }}</p>
 <h3>Hola, soy {{ name }} y tengo {{ age }} años</h3>
-<img src={{img}} alt="image" >
+<img width="500" src={{img}} alt="image" />
+
+<!-- 
+    Diferencias entre String interpolation y property binding
+
+    String interpolation: sirve para ingresar contenido, donde necesitemos renderizar el contenido, como un parrafo, un h1.
+
+    Property Binding: sirve especificamente para propiedades de elementos html, como un boton, es más recomendable utilizarlo.
+-->
