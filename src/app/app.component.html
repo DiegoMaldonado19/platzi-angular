@@ -1,15 +1,18 @@
+<h1>Eventos</h1>
+<button [disabled]="btnDisabled" >Enviar</button>
+<button (click)="toogleButton()">Toggle Button</button>
+<p>Edad {{ person.age }}</p>
+<button (click)="increaseAge()" >Age ++</button>
+<!--
+    En este caso escuchamos eventos desde nuestro componente en typescript
+-->
+<hr/>
+
 <h1>Propiedades</h1>
 <button [disabled]="btnDisabled">Enviar</button>
 <input type="text" [value]="person.name" /> 
 <progress max="100" [value]="person.age" ></progress>
 <img  width="100" [src]="person.avatar" />
-<hr/>
-<h1>Hola Mundo</h1>
-<h2>{{'Hola Mundo'.repeat(5)}}</h2>
-<p>3 + 3 = {{ 3+3 }}</p>
-<h3>Hola, soy {{ name }} y tengo {{ age }} años</h3>
-<img width="500" src={{img}} alt="image" />
-
 <!-- 
     Diferencias entre String interpolation y property binding
 
@@ -17,3 +20,12 @@
 
     Property Binding: sirve especificamente para propiedades de elementos html, como un boton, es más recomendable utilizarlo.
 -->
+
+<hr/>
+
+<h1>Hola Mundo</h1>
+<h2>{{'Hola Mundo'.repeat(5)}}</h2>
+<p>3 + 3 = {{ 3+3 }}</p>
+<h3>Hola, soy {{ name }} y tengo {{ age }} años</h3>
+<img width="500" src={{img}} alt="image" />
+
