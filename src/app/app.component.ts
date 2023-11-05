@@ -19,6 +19,12 @@ export class AppComponent {
 
   names: string[] = ['Diego', 'Jose', 'Edwin'];
 
+  params: string[] = ['Nombre', 'Cantidad', 'Precio'];
+
+  products: any[] = ['Jabon para manos', 18, 18.90];
+
+  foods: any[] = ['Peperoni', 25, 5.99];
+
   newName = '';
 
   toogleButton() {

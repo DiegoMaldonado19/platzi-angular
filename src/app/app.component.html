@@ -9,6 +9,24 @@
   </li>
 </ul>
 
+<table>
+  <tr>
+    <th *ngFor="let param of params" >
+      {{ param }}
+    </th>
+  </tr>
+  <tr>
+    <td *ngFor="let product of products ">
+      {{ product }}
+    </td>
+  </tr>
+  <tr>
+    <td *ngFor="let food of foods ">
+      {{ food }}
+    </td>
+  </tr>
+</table>
+
 <hr/>
 <h1>*ngIf</h1>
 <input type="text" required [(ngModel)]="person.name"/>
