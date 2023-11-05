@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Product} from './product.model';
 
 @Component({
   selector: 'app-root',
@@ -21,11 +22,45 @@ export class AppComponent {
 
   params: string[] = ['Nombre', 'Cantidad', 'Precio'];
 
-  products: any[] = ['Jabon para manos', 18, 18.90];
+  cleaningProduct: any[] = ['Jabon para manos', 18, 18.90];
 
-  foods: any[] = ['Peperoni', 25, 5.99];
+  foodItem: any[] = ['Peperoni', 25, 5.99];
 
   newName = '';
+
+  products: Product[] = [
+    {
+      name: 'EL mejor juguete',
+      price: 565,
+      image: './assets/images/toy.jpg',
+      category: 'all'
+    },
+    {
+      name: 'Bicicleta casi nueva',
+      price: 356,
+      image: './assets/images/bike.jpg'
+    },
+    {
+      name: 'Colleción de albumnes',
+      price: 34,
+      image: './assets/images/album.jpg'
+    },
+    {
+      name: 'Mis libros',
+      price: 23,
+      image: './assets/images/books.jpg'
+    },
+    {
+      name: 'Casa para perro',
+      price: 34,
+      image: './assets/images/house.jpg'
+    },
+    {
+      name: 'Gafas',
+      price: 3434,
+      image: './assets/images/glasses.jpg'
+    }
+  ]
 
   toogleButton() {
     this.btnDisabled = !this.btnDisabled;
