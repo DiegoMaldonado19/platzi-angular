@@ -1,0 +1,8 @@
+.box{
+  height: 200px;
+  width: 200px;
+  /* overflow-y: scroll;*/ /*En caso no funciona el overflow: auto*/
+  /*basicamente para usar auto debemos tener un texto grande*/
+  overflow: auto;
+  background: red;
+}

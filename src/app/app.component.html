@@ -3,17 +3,26 @@
 <button (click)="toogleButton()">Toggle Button</button>
 <p>Edad {{ person.age }}</p>
 <button (click)="increaseAge()" >Age ++</button>
+<div class="box" (scroll)="onScroll($event)">
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus voluptatem nemo aliquid quia impedit aperiam ab recusandae veniam incidunt vero itaque nostrum, sequi quidem ipsam officia atque? Deserunt, impedit commodi?
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti exercitationem quos ratione quisquam assumenda tempora, delectus nobis dolorem sequi a iusto quod tempore aperiam consectetur odit culpa et. Assumenda, harum!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam aliquid quae quis id eius ex itaque expedita optio sit, hic, voluptate soluta laborum minima. Eius libero minima nemo doloribus illum?
+  </p>
+</div>
 <!--
     En este caso escuchamos eventos desde nuestro componente en typescript
 -->
+<p>Nombre {{ person.name }}</p>
+<input type="text" [value]="person.name" (keyup)="changeName($event)"/>
+
 <hr/>
 
 <h1>Propiedades</h1>
 <button [disabled]="btnDisabled">Enviar</button>
-<input type="text" [value]="person.name" /> 
+<input type="text" [value]="person.name" />
 <progress max="100" [value]="person.age" ></progress>
 <img  width="100" [src]="person.avatar" />
-<!-- 
+<!--
     Diferencias entre String interpolation y property binding
 
     String interpolation: sirve para ingresar contenido, donde necesitemos renderizar el contenido, como un parrafo, un h1.
