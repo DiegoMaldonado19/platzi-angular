@@ -1,3 +1,6 @@
+
+
+<hr>
 <h1>ngSwitch</h1>
 <input type="text" required [(ngModel)]="person.name"/>
 <div [ngSwitch]="person.name">
@@ -32,11 +35,11 @@
 
 <hr/>
 <h1>*ngFor with Object array</h1>
-<div>
+<div class="products--grid">
   <div *ngFor="let product of products">
+    <img [src]="product.image" alt="image">
     <h2>Precio: {{ product.price }}</h2>
     <p>Nombre: {{ product.name }}</p>
-    <img width="250" [src]="product.image" alt="image">
   </div>
 </div>
 
@@ -129,5 +132,5 @@
 <h2>{{'Hola Mundo'.repeat(5)}}</h2>
 <p>3 + 3 = {{ 3+3 }}</p>
 <h3>Hola, soy {{ name }} y tengo {{ age }} años</h3>
-<img width="500" src={{img}} alt="image" />
+<img width="100" src={{img}} alt="image" />
 
