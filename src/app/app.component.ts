@@ -8,6 +8,14 @@ import {Product} from './product.model';
 })
 export class AppComponent {
 
+  /* Angular components course logic */
+  imgParent = '';
+
+  onLoaded(img: string){
+    console.log('log padre ', img);
+  }
+
+  /* Angular fundamentals course logic */
   widthImg = 10;
 
   name = 'Diego Maldonado';

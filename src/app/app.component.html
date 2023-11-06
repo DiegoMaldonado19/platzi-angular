@@ -1,3 +1,10 @@
+<p><input type="text" [(ngModel)]="imgParent"></p>
+<app-img (loaded)="onLoaded($event)" [img]="imgParent"></app-img>
+
+
+<p>La parte de abajo corresponde al curso de fundamentos</p>
+
+
 <h1>Formulario</h1>
 <body>
   <div class="container">
@@ -211,4 +218,3 @@
 <p>3 + 3 = {{ 3+3 }}</p>
 <h3>Hola, soy {{ name }} y tengo {{ age }} años</h3>
 <img width="100" src={{img}} alt="image" />
-
