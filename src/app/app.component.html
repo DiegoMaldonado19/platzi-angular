@@ -2,9 +2,11 @@
 <app-img (loaded)="onLoaded($event)" [img]="imgParent"></app-img>
 
 
+<app-product [product]="product" *ngFor="let product of products"></app-product>
+
+
+<hr/>
 <p>La parte de abajo corresponde al curso de fundamentos</p>
-
-
 <h1>Formulario</h1>
 <body>
   <div class="container">
@@ -121,7 +123,7 @@
 <hr/>
 <h1>*ngFor with Object array</h1>
 <div class="products--grid">
-  <div *ngFor="let product of products">
+  <div *ngFor="let product of productsOld">
     <img [src]="product.image" alt="image">
     <h2>Precio: {{ product.price }}</h2>
     <p>Nombre: {{ product.name }}</p>
