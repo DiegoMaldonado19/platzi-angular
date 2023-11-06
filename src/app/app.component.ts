@@ -11,6 +11,8 @@ export class AppComponent {
   /* Angular components course logic */
   imgParent = '';
 
+  showImage = true;
+
   products: Product[] = [{
     id: '1',
     name: 'EL mejor juguete',
@@ -158,5 +160,9 @@ export class AppComponent {
 
   onRegister(){
     console.log(this.register);
+  }
+
+  toggleImage(){
+    this.showImage = !this.showImage;
   }
 }
