@@ -67,3 +67,68 @@ table, th, td {
   }
 }
 
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.container {
+  background-color: #f2d78e;
+  padding: 60px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.form-button {
+    background-color: #f89c2c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/013/786/977/non_2x/sunset-scene-in-forest-glowing-forest-sky-with-mountains-landscape-background-illustration-vector.jpg");
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.message-form-error{
+  background: #f2d78e;
+  color: red;
+  opacity: 0;
+  transition: all linear .5s;
+  &.invalid {
+    opacity: 1;
+  }
+}
+
+.form-button-1{
+  margin-right: 100px;
+  background-color: #f89c2c;
+}
+
+.form-button-2{
+  background-color: #f89c2c;
+}
