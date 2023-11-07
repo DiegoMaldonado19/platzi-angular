@@ -1,14 +1,23 @@
-<p><input type="text" [(ngModel)]="imgParent"></p>
+<app-nav></app-nav>
+<app-products></app-products>
+
+<!--
+
+  <p><input type="text" [(ngModel)]="imgParent"></p>
 
 <button (click)="toggleImage()">Toggle Image</button>
 <p>{{ showImage }}</p>
 <app-img *ngIf="showImage" (loaded)="onLoaded($event)" [img]="imgParent"></app-img>
 
 <hr/>
-<app-product [product]="product" *ngFor="let product of products"></app-product>
+
+-->
 
 
-<hr/>
+
+<!--
+
+  <hr/>
 <p>La parte de abajo corresponde al curso de fundamentos</p>
 <h1>Formulario</h1>
 <body>
@@ -82,10 +91,8 @@
     <input type="text" [(ngModel)]="widthImg"/>
   </div>
   <div>
-    <!-- porcentaje -->
     <img  [style.width.%]="widthImg" [src]="person.avatar" />
     <hr/>
-    <!-- Pixeles -->
     <img  [style.width.px]="widthImg" [src]="person.avatar" />
   </div>
 </div>
@@ -108,7 +115,8 @@
 
   <p *ngSwitchDefault>No hace match</p>
 </div>
-<!--
+
+
 <p *ngIf="person.name == 'nicolas'">
   La persona es nicolas
 </p>
@@ -120,7 +128,6 @@
 <p  *ngIf="person.name== 'camilo'">
   La persona es Camilo
 </p>
--->
 
 
 <hr/>
@@ -195,9 +202,8 @@
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam aliquid quae quis id eius ex itaque expedita optio sit, hic, voluptate soluta laborum minima. Eius libero minima nemo doloribus illum?
   </p>
 </div>
-<!--
-    En este caso escuchamos eventos desde nuestro componente en typescript
--->
+
+
 <p>Nombre {{ person.name }}</p>
 <input type="text" [value]="person.name" (keyup)="changeName($event)"/>
 
@@ -208,13 +214,7 @@
 <input type="text" [value]="person.name" />
 <progress max="100" [value]="person.age" ></progress>
 <img  width="100" [src]="person.avatar" />
-<!--
-    Diferencias entre String interpolation y property binding
 
-    String interpolation: sirve para ingresar contenido, donde necesitemos renderizar el contenido, como un parrafo, un h1.
-
-    Property Binding: sirve especificamente para propiedades de elementos html, como un boton, es más recomendable utilizarlo.
--->
 
 <hr/>
 
@@ -223,3 +223,6 @@
 <p>3 + 3 = {{ 3+3 }}</p>
 <h3>Hola, soy {{ name }} y tengo {{ age }} años</h3>
 <img width="100" src={{img}} alt="image" />
+
+
+-->
