@@ -4,6 +4,15 @@
 <p>
   Total de productos en carrito: ${{ total }}
 </p>
+<p>
+  Today: {{ today | date: 'full'}}
+</p>
+<p>
+  Another date: {{ date | date: 'short'}}
+</p>
+<p>
+ {{ 'hoLA HerMANo' | uppercase }}
+</p>
 <div class="products--grid">
   <app-product
     [product]="product"
