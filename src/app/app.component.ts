@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+/*
 import { Product } from './models/product.model';
+*/
 
 @Component({
   selector: 'app-root',
@@ -13,7 +15,7 @@ export class AppComponent {
 
   showImage = true;
 
-  
+
 
   onLoaded(img: string){
     console.log('log padre ', img);
@@ -55,7 +57,7 @@ export class AppComponent {
     background: 'red'
   };
 
-
+ /*
   productsOld: Product[] = [
     {
       id: '1',
@@ -94,6 +96,7 @@ export class AppComponent {
       image: './assets/images/glasses.jpg'
     }
   ]
+  */
 
   toogleButton() {
     this.btnDisabled = !this.btnDisabled;
