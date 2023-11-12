@@ -12,6 +12,7 @@ export class ProductsService {
   ) { }
 
   getAllProducts() {
-    return this.http.get<Product[]>('https://fakestoreapi.com/products');
+    //return this.http.get<Product[]>('https://fakestoreapi.com/products');
+    return this.http.get<Product[]>('https://api.escuelajs.co/api/v1/products/');
   }
 }
