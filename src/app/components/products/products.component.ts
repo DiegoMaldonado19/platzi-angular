@@ -29,6 +29,9 @@ export class ProductsComponent implements OnInit{
     },
     description: ''
   };
+
+  limit = 10;
+  offset = 0;
   /*
   today = new Date();
   date = new Date(2021, 1, 21);
@@ -100,6 +103,14 @@ export class ProductsComponent implements OnInit{
       const productIndex = this.products.findIndex(item => item.id == this.productChosen.id);
       this.products.splice(productIndex, 1);
       this.showProductDetail = false;
+    });
+  }
+
+  loadMore(){
+    this.productService.getAllProducts(this.limit, this.offset)
+    .subscribe(data => {
+      this.products = this.products.concat(data);
+      this.offset += this.limit;
     });
   }
 }
