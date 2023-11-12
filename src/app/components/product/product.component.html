@@ -1,5 +1,5 @@
 <app-img [img]="product.image"></app-img>
 <h2>Price: {{ product.price | currency:'GTQ' }}</h2>
-<p>Product Name: {{ product.title }}</p>
+<p>Product Name: {{ product.title | reverse}}</p>
 <p>Category: {{ product.category }}</p>
 <button (click)="onAddToCart()">Add cart</button>
