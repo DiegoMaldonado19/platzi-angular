@@ -15,3 +15,6 @@ export interface Product {
 export interface CreateProductDTO extends Omit<Product, 'id' | 'category'> {
   categoryId: number;
 }
+
+/* With partial we can make optional all the params of the interface */
+export interface UpdateProductDTO extends Partial<CreateProductDTO>{ }
