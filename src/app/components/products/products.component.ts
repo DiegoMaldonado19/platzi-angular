@@ -32,6 +32,8 @@ export class ProductsComponent implements OnInit{
 
   limit = 10;
   offset = 0;
+
+  statusDetail: 'loading' | 'success' | 'error' | 'init' = 'init';
   /*
   today = new Date();
   date = new Date(2021, 1, 21);
@@ -61,10 +63,15 @@ export class ProductsComponent implements OnInit{
   }
 
   onShowDetail(id: string) {
+    this.statusDetail = 'loading';
     this.productService.getProduct(id)
     .subscribe(data => {
       this.toggleProductDetail();
       this.productChosen = data;
+      this.statusDetail = 'success';
+    }, errorMesagge => {
+      window.alert(errorMesagge);
+      this.statusDetail = 'error';
     });
   }
 
