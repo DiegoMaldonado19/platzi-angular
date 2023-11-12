@@ -18,7 +18,17 @@ export class ProductsComponent implements OnInit{
 
   showProductDetail = false;
 
-  productChosen!: Product;
+  productChosen: Product = {
+    id: '',
+    price: 0,
+    images: [],
+    title: '',
+    category: {
+      id: '',
+      name: '',
+    },
+    description: ''
+  };
   /*
   today = new Date();
   date = new Date(2021, 1, 21);
