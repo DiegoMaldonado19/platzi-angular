@@ -18,6 +18,9 @@
   &.active {
     transform: translateX(0);
   }
+  img {
+    max-width: 100%;
+  }
 }
 
 // tablets
