@@ -12,7 +12,7 @@ export class ProductsComponent implements OnInit{
 
   myShoppingCart: Product[] = [];
 
-  total: number = 0;
+  total = 0;
 
   products: Product[] = [];
 

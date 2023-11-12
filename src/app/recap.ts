@@ -1,4 +1,4 @@
-const username: string = 'Diego Maldonado';
+const username = 'Diego Maldonado';
 
 const sum = (a: number, b: number) => {
   return a+b;
@@ -7,8 +7,8 @@ const sum = (a: number, b: number) => {
 sum(1,10);
 
 class Person {
-  private age: number = 0;
-  private lastName: string = '';
+  private age = 0;
+  private lastName = '';
 
   constructor(age: number, lastName: string){
       this.age = age;

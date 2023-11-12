@@ -9,7 +9,7 @@ import { StoreService } from '../../services/store.service';
 export class NavComponent implements OnInit{
 
   activeMenu = false;
-  counter:number = 0;
+  counter = 0;
 
   constructor(
     private storeService: StoreService
