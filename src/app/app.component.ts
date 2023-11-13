@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 import { Product } from './models/product.model';
 */
 import { AuthService } from './services/auth.service';
-import { UsersService } from './services/users.service'
-
+import { UsersService } from './services/users.service';
+ 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,6 +16,8 @@ export class AppComponent {
   imgParent = '';
 
   showImage = true;
+
+  token = '';
 
 
 
@@ -149,13 +151,6 @@ export class AppComponent {
     })
     .subscribe(rta => {
       console.log(rta);
-    });
-  }
-
-  login(){
-    this.authService.login('sebas@mail.com', '1212')
-    .subscribe(rta => {
-      console.log(rta.access_token);
     });
   }
 }
