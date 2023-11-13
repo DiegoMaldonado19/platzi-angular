@@ -1,4 +1,7 @@
 import { Component, OnInit} from '@angular/core';
+import { switchMap } from 'rxjs/operators';
+import { zip } from 'rxjs';
+
 import { CreateProductDTO, Product, UpdateProductDTO } from '../../models/product.model';
 import { StoreService } from '../../services/store.service';
 import { ProductsService } from '../../services/products.service';
@@ -73,6 +76,41 @@ export class ProductsComponent implements OnInit{
       window.alert(errorMesagge);
       this.statusDetail = 'error';
     });
+  }
+
+  readAndupdate(id: string) {
+    /*
+    * we can use this option to solve the issue of the callback hell
+    */
+    this.productService.getProduct(id)
+    .pipe(
+      switchMap((product) =>  this.productService.updateProduct(product.id, {title: 'change'}))
+      /*
+       switchMap((product) =>  this.productService.updateProduct(product.id, {title: 'change'})),
+       switchMap((product) =>  this.productService.updateProduct(product.id, {title: 'change'})),
+       switchMap((product) =>  this.productService.updateProduct(product.id, {title: 'change'}))
+
+       we can nest the requests this way this runs one after another
+      */
+    ).subscribe(data => {
+      console.log(data);
+    });
+
+    this.productService.fetchReadAndUpdate(id, {title: 'change'})
+    .subscribe(response => {
+      const read = response[0];
+      const update = response[1];
+    })
+  /* Callback hell, nested requests
+    this.productService.getProduct(id)
+    .subscribe(data => {
+      const product = data;
+      this.productService.updateProduct(product.id, {title: 'change'})
+      .subscribe(rtaUpdate => {
+        console.log(rtaUpdate);
+      })
+    })
+    */
   }
 
   createNewProduct() {

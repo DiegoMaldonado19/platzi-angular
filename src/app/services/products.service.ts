@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpErrorResponse, HttpStatusCode } from '@angular/common/http';
 import { retry, catchError, map } from 'rxjs/operators';
-import { throwError } from 'rxjs';
+import { throwError, zip } from 'rxjs';
 import { CreateProductDTO, Product, UpdateProductDTO } from './../models/product.model';
-import { isNgTemplate } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -59,6 +58,16 @@ export class ProductsService {
         return throwError('Ups algo salio mal');
       })
     )
+  }
+
+  fetchReadAndUpdate(id: string, dto: UpdateProductDTO){
+    return zip(
+      this.getProduct(id),
+      this.updateProduct(id, dto)
+      /*
+      this will run both request at the same time
+      */
+    );
   }
 
   createProduct(dto: CreateProductDTO) {
