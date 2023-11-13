@@ -4,6 +4,7 @@
 <p>Product Name: {{ product.title | reverse}}</p>
 -->
 <p>Product Name: {{ product.title }}</p>
+<p>{{ product?.taxes | currency: 'GTQ' }}</p>
 <!--
 <p>Category: {{ product.category }}</p>
 <p appHighlight> {{ product.description }} </p>
