@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StoreService } from '../../services/store.service';
 import { AuthService } from '../../services/auth.service';
 import { User } from '../../models/user.model';
+import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-nav',
@@ -39,13 +40,26 @@ export class NavComponent implements OnInit{
   }
 
   login(){
-    //TODO: Change this request in order to avoid callback hell, with switchmap
+    // function with callback hell
+    /*
     this.authService.login('sebas@mail.com', '1212')
     .subscribe(rta => {
       console.log(rta.access_token);
       this.token = rta.access_token;
       this.getProfile();
     });
+    */
+   // function without callback hell
+     this.authService.login('sebas@mail.com', '1212')
+      .pipe(
+        switchMap((token) => {
+          this.token = token.access_token;
+          return this.authService.profile(token.access_token);
+        })
+      )
+      .subscribe(user => {
+        this.profile = user;
+      });
   }
 
   getProfile(){
