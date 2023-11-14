@@ -14,8 +14,7 @@ export class NavComponent implements OnInit{
   activeMenu = false;
   counter = 0;
 
-  token = '';
-
+  /*
   profile: User = {
     id: '',
     email: '',
@@ -23,6 +22,9 @@ export class NavComponent implements OnInit{
     name: '',
     avatar: 'https://picsum.photos/800'
   }
+  */
+
+  profile: User | null = null;
 
   constructor(
     private storeService: StoreService,
@@ -50,22 +52,30 @@ export class NavComponent implements OnInit{
     });
     */
    // function without callback hell
+   /*
      this.authService.login('sebas@mail.com', '1212')
       .pipe(
         switchMap((token) => {
           this.token = token.access_token;
-          return this.authService.profile(token.access_token);
+          return this.authService.getProfile();
         })
       )
       .subscribe(user => {
         this.profile = user;
       });
+      */
+      this.authService.loginAndGet('sebas@mail.com', '1212')
+      .subscribe(user => {
+        this.profile = user;
+      });
   }
 
+  /*
   getProfile(){
-    this.authService.profile(this.token)
+    this.authService.getProfile()
     .subscribe(user => {
       this.profile = user;
     });
   }
+  */
 }
